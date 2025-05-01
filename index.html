@@ -1,11 +1,343 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./css/owl.theme.default.min.css">
+    <!-- فونت آوسام برای آیکون‌ها -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Novin Giti Gene Biotechnology</title>
+   
 </head>
 <body>
+    <!-- Header section -->
+    <header class="header">
+        <div class="container-fluid px-0">
+            <div class="row col-xl-11 mx-auto">
+                <div class="col-lg-1 d-flex align-items-start justify-content-center">
+                    <div class="home-icon">
+                        <a href="#"><i class="fas fa-home"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-9 home-nav d-flex align-items-center py-2 position-static">
+                    
+                    <!-- Navigation menu -->
+                    <nav class="nav position-static">
+                        <div class="mobile-menu-btn d-lg-none">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        
+                        <ul class="nav-menu">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link dropdown-toggle" data-megamenu="products-menu">محصولات</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link dropdown-toggle" data-megamenu="services-menu">خدمات</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link dropdown-toggle" data-megamenu="departments-menu">بخش های مختلف شرکت</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">اهداف</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">اخبار</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">درباره ما</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">تماس با ما</a>
+                            </li>
+                        </ul>
+                        
+                        <!-- مگامنوها - خارج از آیتم‌ها -->
+                        <div class="mega-menus-container">
+                            <!-- مگامنو محصولات -->
+                            <div id="products-menu" class="mega-menu">
+                                <div class="mega-menu-container">
+                                    <!-- ستون اول -->
+                                    <div class="mega-menu-column">
+                                        <h3 class="mega-menu-title">محصولات کشت بافت</h3>
+                                        <ul class="submenu-list">
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">گیاهان زینتی</a>
+                                            </li>
+                                            <li class="submenu-item featured-item">
+                                                <a href="#" class="submenu-link">درختان میوه</a>
+                                            </li>
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">گیاهان دارویی</a>
+                                            </li>
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">گل‌های آپارتمانی</a>
+                                            </li>
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">سبزیجات</a>
+                                            </li>
+                                        </ul>
+                                        
+                                        <h3 class="mega-menu-title">گیاهان دارویی</h3>
+                                        <ul class="submenu-list">
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">آلوئه ورا</a>
+                                            </li>
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">نعناع</a>
+                                            </li>
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">آویشن</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <!-- ستون دوم -->
+                                    <div class="mega-menu-column">
+                                        <h3 class="mega-menu-title">محیط‌های کشت</h3>
+                                        <ul class="submenu-list">
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">محیط کشت MS</a>
+                                            </li>
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">محیط کشت B5</a>
+                                            </li>
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">محیط کشت WPM</a>
+                                            </li>
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">هورمون‌های گیاهی</a>
+                                            </li>
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">مکمل‌های محیط کشت</a>
+                                            </li>
+                                        </ul>
+                                        
+                                        <h3 class="mega-menu-title">سایر محصولات</h3>
+                                        <ul class="submenu-list">
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">ژل‌های تغذیه گیاهی</a>
+                                            </li>
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">مواد نگهدارنده</a>
+                                            </li>
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">تجهیزات حفاظتی</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <!-- ستون سوم -->
+                                    <div class="mega-menu-column">
+                                        <h3 class="mega-menu-title">تجهیزات آزمایشگاهی</h3>
+                                        <ul class="submenu-list">
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">اتاقک رشد</a>
+                                            </li>
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">لامینار فلو</a>
+                                            </li>
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">اتوکلاو</a>
+                                            </li>
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">دستگاه‌های استریل</a>
+                                            </li>
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">ظروف کشت</a>
+                                            </li>
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">میکروسکوپ</a>
+                                            </li>
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">پنس و ابزار کشت</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <!-- ستون چهارم -->
+                                    <div class="mega-menu-column">
+                                        <div class="featured-product">
+                                            <img src="product1.jpg" alt="محصول ویژه" class="featured-product-image">
+                                            <h4 class="featured-product-title">کیت کامل کشت بافت</h4>
+                                            <p class="featured-product-desc">مجموعه کامل برای راه‌اندازی آزمایشگاه کشت بافت در مقیاس کوچک با همه ملزومات مورد نیاز</p>
+                                            <div class="featured-product-price">۲,۵۰۰,۰۰۰ تومان</div>
+                                            <a href="#" class="featured-product-button">مشاهده محصول</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- مگامنو خدمات -->
+                            <div id="services-menu" class="mega-menu">
+                                <div class="mega-menu-container">
+                                    <!-- ستون اول -->
+                                    <div class="mega-menu-column">
+                                        <h3 class="mega-menu-title">خدمات آزمایشگاهی</h3>
+                                        <ul class="submenu-list">
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">کشت بافت سفارشی</a>
+                                            </li>
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">تکثیر گیاهان نادر</a>
+                                            </li>
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">آنالیز DNA گیاهی</a>
+                                            </li>
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">خدمات استریلیزاسیون</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <!-- ستون دوم -->
+                                    <div class="mega-menu-column">
+                                        <h3 class="mega-menu-title">خدمات مشاوره</h3>
+                                        <ul class="submenu-list">
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">راه‌اندازی آزمایشگاه</a>
+                                            </li>
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">مشاوره پروژه‌های تحقیقاتی</a>
+                                            </li>
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">مشاوره کشت تجاری</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <!-- ستون سوم -->
+                                    <div class="mega-menu-column">
+                                        <h3 class="mega-menu-title">دوره‌های آموزشی</h3>
+                                        <ul class="submenu-list">
+                                            <li class="submenu-item featured-item">
+                                                <a href="#" class="submenu-link">دوره جامع کشت بافت</a>
+                                            </li>
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">کارگاه تکثیر گیاهان زینتی</a>
+                                            </li>
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">آموزش تکنیک‌های مولکولی</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <!-- ستون چهارم -->
+                                    <div class="mega-menu-column">
+                                        <div class="featured-product">
+                                            <img src="service1.jpg" alt="خدمات ویژه" class="featured-product-image">
+                                            <h4 class="featured-product-title">بسته ویژه آموزش و مشاوره</h4>
+                                            <p class="featured-product-desc">دوره آموزشی همراه با مشاوره اختصاصی برای راه‌اندازی کسب و کار مبتنی بر کشت بافت</p>
+                                            <div class="featured-product-price">۳,۲۰۰,۰۰۰ تومان</div>
+                                            <a href="#" class="featured-product-button">درخواست مشاوره</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- مگامنو بخش‌های شرکت -->
+                            <div id="departments-menu" class="mega-menu">
+                                <div class="mega-menu-container">
+                                    <!-- ستون اول -->
+                                    <div class="mega-menu-column">
+                                        <h3 class="mega-menu-title">واحدهای تحقیقاتی</h3>
+                                        <ul class="submenu-list">
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">واحد تحقیق و توسعه</a>
+                                            </li>
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">آزمایشگاه مرکزی</a>
+                                            </li>
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">واحد بیوتکنولوژی</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <!-- ستون دوم -->
+                                    <div class="mega-menu-column">
+                                        <h3 class="mega-menu-title">واحدهای عملیاتی</h3>
+                                        <ul class="submenu-list">
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">تولید صنعتی</a>
+                                            </li>
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">کنترل کیفیت</a>
+                                            </li>
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">بسته‌بندی و ارسال</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <!-- ستون سوم -->
+                                    <div class="mega-menu-column">
+                                        <h3 class="mega-menu-title">واحدهای پشتیبانی</h3>
+                                        <ul class="submenu-list">
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">فروش و بازاریابی</a>
+                                            </li>
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">پشتیبانی مشتریان</a>
+                                            </li>
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">منابع انسانی</a>
+                                            </li>
+                                            <li class="submenu-item">
+                                                <a href="#" class="submenu-link">مالی و اداری</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <!-- ستون چهارم - تصویر -->
+                                    <div class="mega-menu-column">
+                                        <div class="department-image">
+                                            <img src="department.jpg" alt="ساختار سازمانی" class="featured-product-image">
+                                            <h4 class="featured-product-title">چارت سازمانی</h4>
+                                            <p class="featured-product-desc">ساختار سازمانی شرکت نوین گیتی ژن با تمرکز بر نوآوری و سرعت در ارائه خدمات</p>
+                                            <a href="#" class="featured-product-button">مشاهده چارت سازمانی</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                    
+                    <!-- Search icon -->
+                    <div class="search-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="logo">
+                        <img src="logo.png" alt="NGene Biotech Logo">
+                    </div> 
+                </div>
+            </div>
+        </div>
+  
+        <!-- Overlay for mobile menu -->
+        <div class="menu-overlay"></div>
+    </header>
     
+    <!-- Banner section -->
+    <section class="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="banner-title">پیشرو در کشت بافت گیاهان</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/owl.carousel.min.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
