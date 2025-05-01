@@ -1,12 +1,12 @@
 /* رنگ‌های اصلی سایت برای شرکت بیوتکنولوژی گیاهی */
 :root {
-    --primary-color: #4a7c59; /* سبز طبیعی برای نشان دادن رشد گیاهان */
-    --secondary-color: #8cc084; /* سبز روشن‌تر برای تنوع */
-    --accent-color: #3d5a80; /* آبی تیره برای تضاد با سبز */
-    --neutral-color: #f4f7f2; /* خاکستری مایل به سبز بسیار روشن */
-    --text-color: #2b3a42; /* رنگ متن تیره */
-    --light-accent: #c8e0d4; /* سبز بسیار روشن برای پس‌زمینه‌ها */
-    --hover-color: #6a9979; /* رنگ هاور */
+    --primary-color: #4a7c59; 
+    --secondary-color: #8cc084;
+    --accent-color: #3d5a80;  
+    --neutral-color: #f4f7f2; 
+    --text-color: #2b3a42;
+    --light-accent: #c8e0d4; 
+    --hover-color: #6a9979; 
 }
 
 body {
@@ -14,7 +14,7 @@ body {
     direction: rtl;
 }
 
-/* استایل‌های هدر */
+
 .header {
     background-color: #fff;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -107,13 +107,11 @@ body {
     color: var(--primary-color);
 }
 
-/* کانتینر اصلی مگامنوها */
 .mega-menus-container {
     position: static;
     width: 100%;
 }
 
-/* استایل‌های مگامنو */
 .mega-menu {
     position: absolute;
     top: 100%;
@@ -126,7 +124,7 @@ body {
     transition: all 0.3s;
     transform: translateY(10px);
     pointer-events: none;
-    padding: 20px 0;
+    
     border-top: 3px solid var(--primary-color);
     z-index: 1001;
 }
@@ -145,138 +143,6 @@ body {
     display: flex;
 }
 
-/* ستون اصلی مگامنو */
-.mega-menu-column {
-    padding: 0 15px;
-    flex: 1;
-}
-
-/* عنوان ستون */
-.mega-menu-title {
-    color: var(--primary-color);
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--light-accent);
-    position: relative;
-}
-
-/* آیکون فلش برای عنوان */
-.mega-menu-title::after {
-    content: "";
-    position: absolute;
-    bottom: -1px;
-    right: 0;
-    width: 50px;
-    height: 2px;
-    background-color: var(--primary-color);
-}
-
-/* لیست آیتم‌های مگامنو */
-.submenu-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 20px 0;
-}
-
-.submenu-item {
-    margin-bottom: 8px;
-    position: relative;
-}
-
-.submenu-link {
-    color: var(--text-color);
-    text-decoration: none;
-    font-size: 13px;
-    display: block;
-    padding: 5px 0;
-    transition: all 0.2s;
-}
-
-.submenu-link:hover {
-    color: var(--primary-color);
-    padding-right: 5px;
-}
-
-/* نشانگر آیتم‌های ویژه */
-.featured-item {
-    position: relative;
-}
-
-.featured-item::after {
-    content: "جدید";
-    position: absolute;
-    top: 0;
-    left: -5px;
-    background-color: var(--primary-color);
-    color: white;
-    font-size: 10px;
-    padding: 2px 5px;
-    border-radius: 3px;
-}
-
-/* بخش محصول ویژه */
-.featured-product {
-    background-color: var(--light-accent);
-    padding: 15px;
-    border-radius: 5px;
-    height: 100%;
-}
-
-.featured-product-image {
-    width: 100%;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    transition: all 0.3s;
-}
-
-.featured-product-image:hover {
-    transform: scale(1.03);
-}
-
-.featured-product-title {
-    color: var(--text-color);
-    font-size: 14px;
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-
-.featured-product-desc {
-    color: var(--text-color);
-    font-size: 12px;
-    line-height: 1.5;
-    margin-bottom: 12px;
-}
-
-.featured-product-price {
-    color: var(--primary-color);
-    font-size: 13px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.featured-product-button {
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 5px 12px;
-    border-radius: 3px;
-    font-size: 12px;
-    cursor: pointer;
-    transition: all 0.3s;
-    display: inline-block;
-    text-decoration: none;
-}
-
-.featured-product-button:hover {
-    background-color: var(--hover-color);
-    color: white;
-    text-decoration: none;
-}
-
 
 .pro-menu,.pro-earth {
     /* position: absolute;
@@ -289,14 +155,14 @@ body {
     background-color: #fff;
     box-shadow: 0px 0px 2px #e4e4e4; */
   }
-  .pro-menu.active, .pro-earth.active {
+  .pro-earth {
     /* opacity: 1;
     visibility: visible; */
     display: flex;
   }
   .pro-tabs {
     width: 20%;
-    background-color: #f5f5f5;
+    background-color: var(--primary-color);
     height: 300px;
     max-height: 300px;
     overflow-y: auto;
@@ -307,6 +173,7 @@ body {
     justify-content: space-between;
     /* border-bottom: 1px solid var(--red); */
     cursor: pointer;
+    color: #fff;
   }
   .p-tab.active, .p-tab-earth.active {
     background-color: #fff;
@@ -576,3 +443,776 @@ body {
     }
 }
 
+.about-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-section::before {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-color: rgba(74, 124, 89, 0.05);
+    border-radius: 50%;
+    left: -150px;
+    top: -100px;
+    z-index: 0;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 25px;
+    position: relative;
+    text-align: right;
+}
+
+.section-title .highlight {
+    color: #4a7c59;
+}
+
+.about-text {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+.features-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0;
+}
+
+.feature-item {
+    width: 48%;
+    text-align: center;
+}
+
+.red-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #e74c3c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px auto;
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.2);
+}
+
+.red-circle img {
+    width: 40px;
+    height: 40px;
+    filter: brightness(0) invert(1);
+}
+
+.feature-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.feature-text {
+    font-size: 14px;
+    color: #777;
+}
+
+.certification-text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #555;
+    margin: 30px 0;
+    text-align: justify;
+    border-right: 3px solid #4a7c59;
+    padding-right: 15px;
+}
+
+.view-products-btn {
+    display: inline-block;
+    background-color: white;
+    color: #4a7c59;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    border: 2px solid #4a7c59;
+    transition: all 0.3s ease;
+    margin: 20px 0;
+}
+
+.view-products-btn:hover {
+    background-color: #4a7c59;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(74, 124, 89, 0.3);
+}
+
+.about-images {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lab-image {
+    width: 80%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.plant-image {
+    position: absolute;
+    bottom: 50px;
+    right: 0;
+    width: 50%;
+    z-index: 2;
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* استایل‌های ریسپانسیو */
+@media (max-width: 992px) {
+    .about-images {
+        margin-top: 50px;
+    }
+    
+    .features-row {
+        flex-direction: column;
+    }
+    
+    .feature-item {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    .section-title {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-section {
+        padding: 50px 0;
+    }
+    
+    .section-title {
+        font-size: 24px;
+    }
+    
+    .about-text, .certification-text {
+        font-size: 14px;
+    }
+    
+    .plant-image {
+        width: 40%;
+        bottom: 30px;
+    }
+}
+
+
+/* استایل بخش ویژگی‌ها */
+.features-section {
+    padding: 70px 0;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+/* استایل عنوان اصلی شرکت */
+.company-title {
+    font-size: 48px;
+    font-weight: 800;
+    color: transparent;
+    background: linear-gradient(to right, #8cc084, #4a7c59);
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    letter-spacing: 2px;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+}
+
+/* استایل ردیف ویژگی‌ها */
+.features-row {
+    margin-bottom: 70px;
+}
+
+/* استایل باکس هر ویژگی */
+.feature-box {
+    padding: 20px;
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.feature-box:hover {
+    transform: translateY(-10px);
+}
+
+/* استایل آیکون ویژگی */
+.feature-icon {
+    position: relative;
+    margin: 0 auto 20px;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-icon img {
+    width: 100%;
+    height: auto;
+}
+
+/* استایل نشان +5 */
+.feature-badge {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: #4a7c59;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* استایل عنوان ویژگی */
+.feature-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* استایل زیرعنوان ویژگی */
+.feature-subtitle {
+    font-size: 14px;
+    font-weight: 400;
+    color: #777;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* استایل توضیحات ویژگی */
+.feature-description {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #666;
+}
+
+/* استایل بخش نمایش دو تصویری */
+.showcase-row {
+    height: 400px;
+}
+
+.showcase-col {
+    height: 100%;
+    padding: 0;
+}
+
+/* استایل باکس نمایش */
+.showcase-box {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* استایل باکس محصولات */
+.showcase-products {
+    background-image: url('images/plant-showcase.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.showcase-products::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* استایل باکس عنوان نمایش */
+.showcase-title {
+    background-color: #3d5a80;
+    padding: 40px;
+}
+
+/* استایل عنوان نمایش */
+.showcase-heading {
+    color: #fff;
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.showcase-heading span {
+    display: block;
+    margin-top: 10px;
+    font-size: 48px;
+    color: #f4f7f2;
+}
+
+/* استایل‌های ریسپانسیو */
+@media (max-width: 992px) {
+    .company-title {
+        font-size: 36px;
+    }
+    
+    .showcase-row {
+        height: auto;
+    }
+    
+    .showcase-col {
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .company-title {
+        font-size: 30px;
+    }
+    
+    .feature-box {
+        max-width: 300px;
+        margin: 0 auto 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .company-title {
+        font-size: 24px;
+    }
+    
+    .showcase-heading {
+        font-size: 28px;
+    }
+    
+    .showcase-heading span {
+        font-size: 36px;
+    }
+}
+
+.company-title {
+  font-size: 48px;
+  font-weight: 800;
+  text-align: center;
+  margin: 50px 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  
+  /* گرادیان پس‌زمینه برای متن - جهت معکوس شده */
+  background: linear-gradient(
+    to left,
+    hsl(111.96deg, 96.55%, 22.75%), 
+    hsl(70.84deg, 62.25%, 51.18%),
+    hsl(111.96deg, 96.55%, 22.75%)
+  );
+  
+  /* اندازه گرادیان بزرگتر از متن برای حرکت */
+  background-size: 200% auto;
+  
+  /* شروع از انتهای راست گرادیان تا حرکت از چپ به راست باشد */
+  background-position: 100% center;
+  
+  /* برش متن با خود گرادیان */
+  -webkit-background-clip: text;
+  background-clip: text;
+  
+  /* شفاف کردن متن برای نمایش گرادیان */
+  color: transparent;
+  
+  /* انیمیشن حرکت گرادیان - معکوس شده */
+  animation: shimmer-ltr 3s linear infinite;
+  
+  /* سایه متن برای افزایش عمق بصری */
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* تعریف انیمیشن حرکت گرادیان از چپ به راست */
+@keyframes shimmer-ltr {
+  0% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: -100% center;
+  }
+}
+
+/* استایل‌های ریسپانسیو */
+@media (max-width: 992px) {
+  .company-title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .company-title {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .company-title {
+    font-size: 24px;
+    letter-spacing: 1px;
+  }
+}
+/* استایل بخش نمایش محصولات */
+.products-showcase {
+    margin-bottom: 50px;
+}
+
+/* بخش ویدیو */
+.video-section {
+    height: 400px;
+    background-image: url('images/plants-video-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.play-button {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.play-button i {
+    color: #4a7c59;
+    font-size: 30px;
+    margin-left: 5px; /* تنظیم جزئی برای قرارگیری بهتر آیکون پخش */
+}
+
+.play-button:hover {
+    transform: scale(1.1);
+    background-color: #fff;
+}
+
+/* بخش عنوان محصولات */
+.products-title-section {
+    height: 400px;
+    background-color: #3d5a80;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.products-title {
+    color: #fff;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.products-title span {
+    display: block;
+    color: #8cc084;
+    font-size: 42px;
+    margin-top: 5px;
+}
+
+.products-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.product-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 3px solid #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* گالری محصولات */
+.product-gallery {
+    margin-top: 0;
+}
+
+.product-item {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.product-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.product-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+
+.product-name {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.product-item:hover img {
+    transform: scale(1.05);
+}
+
+/* استایل‌های ریسپانسیو */
+@media (max-width: 992px) {
+    .products-title {
+        font-size: 30px;
+    }
+    
+    .products-title span {
+        font-size: 36px;
+    }
+    
+    .product-image {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .video-section, 
+    .products-title-section {
+        height: 350px;
+    }
+    
+    .products-title {
+        font-size: 26px;
+    }
+    
+    .products-title span {
+        font-size: 32px;
+    }
+    
+    .product-item {
+        height: 200px;
+    }
+    
+    .product-name {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .video-section, 
+    .products-title-section {
+        height: 300px;
+    }
+    
+    .products-title {
+        font-size: 22px;
+    }
+    
+    .products-title span {
+        font-size: 28px;
+    }
+    
+    .product-image {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .play-button {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .play-button i {
+        font-size: 24px;
+    }
+    
+    .product-item {
+        height: 180px;
+    }
+    
+    .product-name {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+/* استایل بخش نقشه */
+.map-section {
+    width: 100%;
+    margin-bottom: 0;
+    position: relative;
+}
+
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 200px; /* ارتفاع نقشه - می‌توانید تغییر دهید */
+    overflow: hidden;
+}
+
+#google-map {
+    width: 100%;
+    height: 100%;
+    background-color: #e5e3df; /* رنگ پس‌زمینه در صورت لود نشدن نقشه */
+}
+
+/* استایل دکمه‌های کنترل زوم */
+.map-controls {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.map-control-btn {
+    width: 32px;
+    height: 32px;
+    background-color: #fff;
+    border: none;
+    border-radius: 2px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    margin-bottom: 5px;
+    color: #666;
+    transition: background-color 0.2s;
+}
+
+.map-control-btn:hover {
+    background-color: #f5f5f5;
+}
+
+/* استایل دکمه‌های تغییر حالت نمایش */
+.map-type-control {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+    display: flex;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.map-type-btn {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+    color: #666;
+    font-size: 13px;
+    transition: background-color 0.2s;
+}
+
+.map-type-btn:first-child {
+    border-left: 1px solid #e0e0e0;
+}
+
+.map-type-btn i {
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+.map-type-btn:hover {
+    background-color: #f5f5f5;
+}
+
+.map-type-btn.active {
+    background-color: #f0f0f0;
+    color: #4a7c59;
+}
+
+/* استایل‌های ریسپانسیو */
+@media (max-width: 576px) {
+    .map-container {
+        height: 180px;
+    }
+    
+    .map-type-btn span {
+        display: none;
+    }
+    
+    .map-type-btn {
+        padding: 8px;
+    }
+    
+    .map-type-btn i {
+        margin: 0;
+    }
+}
