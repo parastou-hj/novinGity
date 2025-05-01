@@ -387,7 +387,7 @@ body {
 }
 
 @media (max-width: 991px) {
-    /* منوی موبایل */
+   
     .mobile-menu-btn {
         display: block;
     }
@@ -421,47 +421,8 @@ body {
         border-bottom: 1px solid var(--light-accent);
     }
     
-    /* مگامنو در حالت موبایل */
-    .mega-menu {
-        position: static;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        pointer-events: auto;
-        display: none;
-        padding: 0;
-        border-top: none;
-        box-shadow: none;
-    }
-    
-    .mega-menu.active {
-        display: block;
-    }
-    
-    .mega-menu-container {
-        flex-direction: column;
-    }
-    
-    .mega-menu-column {
-        padding: 0 20px 10px;
-    }
-    
-    .mega-menu-title {
-        font-size: 14px;
-        padding: 10px 0;
-        margin-bottom: 10px;
-    }
-    
-    .submenu-link {
-        padding: 8px 15px;
-        font-size: 12px;
-        border-bottom: 1px solid #f1f1f1;
-    }
-    
-    .featured-product {
-        margin-top: 15px;
-    }
-    
+ 
+
     /* سایر استایل‌های ریسپانسیو */
     .home-nav {
         justify-content: flex-end;
@@ -483,41 +444,3 @@ body {
     }
 }
 
-@media (max-width: 767px) {
-    .banner-title {
-        font-size: 32px;
-        padding: 10px 20px;
-    }
-    
-    .banner {
-        height: 300px;
-    }
-}
-
-@media (max-width: 575px) {
-    .logo img {
-        max-height: 50px;
-    }
-    
-    .banner-title {
-        font-size: 24px;
-    }
-    
-    .banner {
-        height: 250px;
-    }
-    
-    .home-icon {
-        width: 35px;
-        height: 35px;
-    }
-    
-    .search-icon {
-        width: 35px;
-        height: 35px;
-    }
-    
-    .mega-menu-column {
-        padding: 0 15px 10px;
-    }
-}
