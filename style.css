@@ -1,44 +1,86 @@
-/* رنگ‌های اصلی سایت برای شرکت بیوتکنولوژی گیاهی */
 :root {
     --primary-color: #4a7c59; 
     --secondary-color: #8cc084;
     --accent-color: #3d5a80;  
     --neutral-color: #f4f7f2; 
-    --text-color: #2b3a42;
+    --text-color: #000;
     --light-accent: #c8e0d4; 
     --hover-color: #6a9979; 
+    --red:hsl(359.43deg 79.1% 73.73%);
+    --blue:hsl(220deg 22.31% 47.45%)
 }
+@font-face {
+    font-family: IRANYekanWebLight;
+    src: url(./font/IRANYekanWebLight.ttf);
+  }
+  @font-face {
+    font-family: IRANYekanWebBold;
+    src: url(./font/IRANYekanWebBold.ttf);
+  }
+  @font-face {
+    font-family: IRANYekanWebExtraBlack;
+    src: url(./font/IRANYekanWebExtraBlack.ttf);
+  }
+  @font-face {
+    font-family: IRANYekanWebExtraBold;
+    src: url(./font/IRANYekanWebExtraBold.ttf);
+  }
+  @font-face {
+    font-family: IRANYekanWebMedium;
+    src: url(./font/IRANYekanWebMedium.ttf);
+  }
+  @font-face {
+    font-family: IRANYekanWebRegular;
+    src: url(./font/IRANYekanWebRegular.ttf);
+  }
+  
 
 body {
-    font-family: 'Tahoma', Arial, sans-serif;
+    font-family: IRANYekanWebRegular;
     direction: rtl;
+    font-size: 14px;
 }
-
+.container-fluid .row{
+    max-width: 1678px;
+    margin: 0px auto;
+}
 
 .header {
     background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    /* box-shadow: 0 2px 10px rgba(0,0,0,0.1); */
     position: relative;
     z-index: 1000;
-    padding: 10px 0;
+    
 }
-
+.header-top{
+    position: relative;
+}
+.header-top img{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+}
 /* لوگو */
 .logo {
     text-align: left;
-    padding: 5px 0;
+    width: 100%;
+    height: 100%;
 }
 
 .logo img {
-    max-height: 60px;
-    width: auto;
+ 
+    object-fit: fill;
 }
-
+.home-nav{
+    position: relative;
+}
 /* آیکون خانه */
 .home-icon {
     background-color: var(--accent-color);
-    width: 40px;
-    height: 40px;
+    width: 80px;
+    height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -66,237 +108,236 @@ body {
 .search-icon i {
     color: white;
 }
-
-/* منوی اصلی */
-.nav {
-    position: static;
-    width: 100%;
+.main-nav {
+    position: relative; 
+    color: var(--text-color);
+    padding: 0 20px; 
+    z-index: 1000;
 }
-
-.nav-menu {
+/* منوی اصلی */
+.main-nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
 }
 
-.nav-item {
-    position: relative;
-    margin: 0 5px;
+.main-nav ul li {
+    margin-left: 20px;
+    position: relative; 
+}
+.main-nav ul li:last-child {
+    margin-left: 0;
 }
 
-.nav-link {
+.main-nav ul li a {
     color: var(--text-color);
     text-decoration: none;
-    padding: 15px;
+    padding: 15px 10px; 
     display: block;
-    font-size: 14px;
-    transition: all 0.3s;
-    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap; 
 }
+ .main-nav ul li a:hover,
+ .main-nav ul li.active-trigger a { 
+    background-color: rgba(255, 255, 255, 0.1);
+ }
+ .main-nav ul li a i { 
+     font-size: 0.7em;
+     margin-right: 3px;
+     vertical-align: middle;
+ }
 
-.dropdown-toggle::after {
-    content: "\f107";
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    margin-right: 5px;
-    font-size: 12px;
-}
-
-.nav-link:hover {
-    color: var(--primary-color);
-}
-
-.mega-menus-container {
-    position: static;
-    width: 100%;
-}
+/* --- Mega Menu Styles --- */
 
 .mega-menu {
     position: absolute;
-    top: 100%;
-    right: 0;
-    left: 0;
+    top: 100%; 
+    right: 0;  
+    width: 100%; 
+    max-width: 95vw; 
+    height: 350px; 
+    z-index: 1001; 
     background-color: #fff;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    opacity: 0;
-    visibility: hidden;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.15);
+    border-top: 3px solid var(--red);
+    margin-top: 20px;
     transition: all 0.3s;
     transform: translateY(10px);
     pointer-events: none;
-    
     border-top: 3px solid var(--primary-color);
-    z-index: 1001;
+    opacity:0;
+    visibility: hidden;
 }
 
 .mega-menu.active {
+    display: flex;
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
     pointer-events: auto;
+    transition: all 0.3s;
+
+
 }
 
-.mega-menu-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
+.mega-menu .pro-menu {
+    width:100%;
+    display:flex;
+    height: 100%;
 }
 
-
-.pro-menu,.pro-earth {
-    /* position: absolute;
-    top: 100%;
-    right: 0;
-    width: 100%;
-    height: 300px;
-    display: none;
-    z-index: 10001;
-    background-color: #fff;
-    box-shadow: 0px 0px 2px #e4e4e4; */
-  }
-  .pro-earth {
-    /* opacity: 1;
-    visibility: visible; */
-    display: flex;
-  }
-  .pro-tabs {
-    width: 20%;
-    background-color: var(--primary-color);
-    height: 300px;
-    max-height: 300px;
+/* --- Tabs --- */
+.pro-tabs {
+    width: 30%;
+    background-color:var(--light-accent);
+    height: 100%;
+    max-height: 100%;
     overflow-y: auto;
-  }
-  .p-tab, .p-tab-earth {
+    border-left: 1px solid #ddd;
+}
+.p-tab {
     padding: 15px;
+    display: flex;
     align-items: center;
     justify-content: space-between;
-    /* border-bottom: 1px solid var(--red); */
     cursor: pointer;
-    color: #fff;
-  }
-  .p-tab.active, .p-tab-earth.active {
+    border-bottom: 1px solid #cce5ff;
+    transition: background-color 0.2s ease; 
+}
+.p-tab:last-child {
+    border-bottom: none;
+}
+ .p-tab:hover {
+     background-color: #ddeeff;
+ }
+.p-tab.active{
     background-color: #fff;
-  }
-  .p-tab.active span, .p-tab-earth.active span {
-    color: var(--red);
-  }
-  .p-tab.active img, .p-tab-earth.active img {
-    filter: none;
-  }
-  .p-tab > div, .p-tab-earth > div {
-    display: flex;
-    /* align-items: flex-end; */
-  }
-  .p-tab span,.p-tab-earth span  {
-    /* color: var(--red); */
-    align-self: flex-end;
-    font-weight: bold;
-    font-size: 0.8em;
-    margin-top: 5px;
-  }
-  .p-tab img,  .p-tab-earth img {
-    width: 20px;
-    height: 20px;
-    margin-left: 8px;
-    filter: brightness(-100%);
-    align-self: flex-start;
-  }
-  .p-tab i,  .p-tab-earth i {
-    font-size: 0.6em;
-  }
-  .pro-contents {
-    width: 80%;
-    background-color: #fff;
-    height: 300px;
-    max-height: 300px;
-    overflow-y: auto;
-  }
-  .p-content,.p-content-earth {
-    padding: 15px;
-    display: none;
-  }
-  .p-content.active,.p-content-earth.active {
-    display: block;
-  }
-  .p-content a, .p-content-earth a {
+    color:var(--text-color);
+    border-right: 3px solid var(--primary-color);
+    margin-right: -1px;
+    font-weight: bold; 
+}
+.p-tab.active span {
+    font-weight: bold; 
+}
+ .p-tab.active .fa-chevron-left {
+    color:var(--text-color);
+ }
+.p-tab > div{
     display: flex;
     align-items: center;
-    padding: 10px;
+}
+.p-tab span {
     color: #333;
-  }
-  .p-content a:hover span, .p-content-earth a:hover span {
-    color: var(--red);
-  }
-  .p-content a span, .p-content-earth a span {
-    font-size: 1em;
-    font-weight: bold;
-  }
-  .p-content a i, .p-content-earth a i {
-    font-size: 0.7em;
-    font-weight: bold;
-    margin-right: 5px;
-  }
-  .sub-menus {
-    padding: 10px 0px;
-    font-size: 0.9em;
-  }
-  .sub-menu {
-    padding: 10px;
-    /* border-right: 2px solid var(--red); */
-  }
-  .sub-menu > a {
-    font-size: 1em;
-    font-weight: bold;
-    padding: 5px 0px;
-    border-bottom: 2px solid var(--red);
-  }
-  .sub-menu-items {
-    padding: 10px 0px;
-  }
-  .s-b-item a:hover {
-    font-weight: bold;
-    color: var(--red);
-  }
-
-  .overlay-main{
-    position: fixed;
-    top: 170px;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(70, 64, 64, 0.5);
-    z-index: 999;
-    opacity: 0;
-    visibility: hidden;
-   }
-.overlay-main.active{
-    visibility: visible;
-    opacity: 1;
+    font-weight: 500;
+    margin-right: 8px;
+    transition: color 0.2s ease;
+}
+.p-tab.active span {
+    color:var(--text-color);
 }
 
+.p-tab .fa-fw { 
+    width: 20px; 
+    text-align: center;
+    opacity: 0.7;
+     transition: opacity 0.2s ease;
+}
+.p-tab.active .fa-fw {
+     opacity: 1;
+     color:var(--text-color);
+}
 
-/* عنوان بنر */
-.banner {
-    background-image: url('banner.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 400px;
+.p-tab i.fa-chevron-left {
+    font-size: 0.8em;
+    color: #aaa;
+     transition: color 0.2s ease;
+}
+
+/* --- Content Panes --- */
+.pro-contents {
+    width: 70%;
+    background-color: #fff;
+    height: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+    padding: 20px;
+}
+.p-content{
+    display: none;
+}
+.p-content.active {
+    display: block;
+}
+
+.p-content > a:first-child {
     display: flex;
     align-items: center;
-    justify-content: center;
+    padding: 0 0 15px 0;
+    color:var(--text-color);
+     font-weight: bold;
+     border-bottom: 1px dashed #eee;
+     margin-bottom: 20px;
+     text-decoration: none;
+}
+.p-content > a:first-child:hover span {
+    text-decoration: underline;
+    color:var(--hover-color);
+}
+.p-content > a:first-child span {
+    font-size: 1.1em;
+}
+.p-content > a:first-child i {
+    font-size: 0.9em;
+    margin-left: 8px; 
 }
 
-.banner-title {
-    color: white;
-    font-size: 42px;
-    font-weight: bold;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-    background-color: rgba(74, 124, 89, 0.7);
-    display: inline-block;
-    padding: 15px 30px;
-    border-radius: 5px;
+/* --- Sub Menus --- */
+.sub-menus {
+    font-size: 0.95em;
 }
+
+
+.sub-menu {
+     margin-bottom: 25px; 
+}
+.sub-menu:last-child {
+     margin-bottom: 0;
+}
+.sub-menu > a { 
+    font-size: 1em;
+    font-weight: bold;
+    padding-bottom: 5px;
+    margin-bottom: 12px;
+    display: inline-block;
+    border-bottom: 2px solid var(--hover-color);
+    color: #333;
+    text-decoration: none;
+}
+ .sub-menu > a:hover {
+    color:var(--hover-color);
+ }
+.sub-menu-items {
+    padding: 0;
+}
+.s-b-item a {
+    display: block;
+    padding: 9px 5px;
+    color: #555;
+    text-decoration: none;
+    border-radius: 3px;
+    font-size: 0.95em;
+    transition: background-color 0.2s ease, color 0.2s ease, padding-right 0.2s ease;
+}
+.s-b-item a:hover {
+    font-weight: normal; 
+    color:var(--primary-color);
+    background-color: #f8f9fa;
+    padding-right: 10px; 
+}
+
+
 
 /* دکمه منوی موبایل */
 .mobile-menu-btn {
@@ -451,7 +492,7 @@ body {
 }
 
 .about-section::before {
-    content: "";
+    /* content: "";
     position: absolute;
     width: 300px;
     height: 300px;
@@ -459,20 +500,23 @@ body {
     border-radius: 50%;
     left: -150px;
     top: -100px;
-    z-index: 0;
+    z-index: 0; */
 }
 
 .section-title {
-    font-size: 32px;
-    font-weight: 700;
-    color: #333;
+    font-size: 30px;
+    font-family: IRANYekanWebBold;
+    font-weight: 600;
+    color: var(--blue);
     margin-bottom: 25px;
     position: relative;
     text-align: right;
 }
 
 .section-title .highlight {
-    color: #4a7c59;
+    color: var(--red);
+    font-family: IRANYekanWebBold;
+    font-weight: lighter;
 }
 
 .about-text {
@@ -492,28 +536,25 @@ body {
 .feature-item {
     width: 48%;
     text-align: center;
+    display: flex;
+    align-items: center;
 }
 
 .red-circle {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background-color: #e74c3c;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 15px auto;
-    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.2);
+  
 }
 
 .red-circle img {
     width: 40px;
     height: 40px;
-    filter: brightness(0) invert(1);
+    /* filter: brightness(0) invert(1); */
 }
 
 .feature-title {
-    font-size: 18px;
+    font-size: 1em;
     font-weight: 600;
     color: #333;
     margin-bottom: 8px;
@@ -537,13 +578,13 @@ body {
 .view-products-btn {
     display: inline-block;
     background-color: white;
-    color: #4a7c59;
+    color: var(--text-color);
     font-size: 16px;
     font-weight: 600;
     padding: 12px 30px;
     border-radius: 30px;
     text-decoration: none;
-    border: 2px solid #4a7c59;
+    border: 2px solid var(--red);
     transition: all 0.3s ease;
     margin: 20px 0;
 }
@@ -564,19 +605,21 @@ body {
 }
 
 .lab-image {
-    width: 80%;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    object-fit: fill;
+
+    /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); */
 }
 
-.plant-image {
+.lab-circle{
     position: absolute;
-    bottom: 50px;
-    right: 0;
-    width: 50%;
-    z-index: 2;
-    animation: float 4s ease-in-out infinite;
+    top: 20%;
+    left: 0;
+    z-index: 1;
+    width: 90px;
 }
 
 @keyframes float {
@@ -633,15 +676,15 @@ body {
 
 /* استایل بخش ویژگی‌ها */
 .features-section {
-    padding: 70px 0;
+    /* padding: 70px 0; */
     background-color: #ffffff;
     overflow: hidden;
 }
 
 /* استایل عنوان اصلی شرکت */
 .company-title {
-    font-size: 48px;
-    font-weight: 800;
+    font-size: 78px;
+    font-weight: bolder;
     color: transparent;
     background: linear-gradient(to right, #8cc084, #4a7c59);
     -webkit-background-clip: text;
@@ -650,6 +693,7 @@ body {
     letter-spacing: 2px;
     margin-bottom: 60px;
     text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 /* استایل ردیف ویژگی‌ها */
@@ -672,8 +716,8 @@ body {
 .feature-icon {
     position: relative;
     margin: 0 auto 20px;
-    width: 90px;
-    height: 90px;
+    width: 130px;
+    height: 130px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -703,9 +747,9 @@ body {
 
 /* استایل عنوان ویژگی */
 .feature-title {
-    font-size: 18px;
+    font-size: 1.3em;
     font-weight: 700;
-    color: #333;
+    color:  var(--blue);
     margin-bottom: 5px;
 }
 
@@ -713,7 +757,7 @@ body {
 .feature-subtitle {
     font-size: 14px;
     font-weight: 400;
-    color: #777;
+    color: #b6b5b5;
     margin-bottom: 15px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -824,7 +868,7 @@ body {
 }
 
 .company-title {
-  font-size: 48px;
+  font-size: 78px;
   font-weight: 800;
   text-align: center;
   margin: 50px 0;
@@ -917,15 +961,18 @@ body {
 }
 
 .play-button {
-    width: 80px;
-    height: 80px;
-    background-color: rgba(255, 255, 255, 0.8);
+    width: 90px;
+    height: 90px;
+    background-color: rgba(255, 255, 255, 0.76);
+    /* border: 15px solid rgba(5, 5, 5, 0.575); */
+    /* box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.76); */
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s;
+    z-index: 1
 }
 
 .play-button i {
@@ -938,31 +985,37 @@ body {
     transform: scale(1.1);
     background-color: #fff;
 }
-
+.video-section .video-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0
+}
 /* بخش عنوان محصولات */
 .products-title-section {
     height: 400px;
-    background-color: #3d5a80;
-    padding: 40px;
+    background-color: var(--blue);
+    padding:0px 40px;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     position: relative;
 }
 
 .products-title {
     color: #fff;
-    font-size: 36px;
+    font-size: 32px;
     font-weight: 700;
     margin-bottom: 15px;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .products-title span {
-    display: block;
-    color: #8cc084;
-    font-size: 42px;
+    /* display: block; */
+    /* color: #8cc084; */
+    font-size: 36px;
     margin-top: 5px;
 }
 
@@ -975,12 +1028,13 @@ body {
 }
 
 .product-image {
-    width: 150px;
-    height: 150px;
-    border-radius: 5px;
-    overflow: hidden;
-    border: 3px solid #fff;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 250px;
+    height: 250px;
+    margin-left: 20px;
+    /* border-radius: 5px; */
+    /* overflow: hidden; */
+    /* border: 3px solid #fff; */
+    /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); */
 }
 
 .product-image img {
@@ -1216,3 +1270,106 @@ body {
         margin: 0;
     }
 }
+.banner .item{
+    position: relative;
+    height: 600px;
+}
+.banner .item .baner-back{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+.baner-top{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1
+}
+.banner .item .banner-text{
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   width: 50%;
+   right: 25%;
+   font-size: 2.5em;
+   color: #fff;
+   font-family: IRANYekanWebExtraBold;
+   text-shadow:3px 2px #333;
+   text-align: center;
+}
+.nav-btns{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 30px;
+    z-index: 2;
+}
+.nav-btns> div{
+    width: 60px;
+    height:60px;
+    cursor: pointer;
+}
+.nav-btns> div img{
+    width: 100%;
+    height: 100%;
+}
+.nav-right{
+    transform: translateX(0px);
+    transition: .2s;
+}
+.nav-right:hover{
+    transform: translateX(3px);
+    transition: .2s;
+}
+.nav-left{
+    transform: translateX(0px);
+    transition: .2s;
+}
+.nav-left:hover{
+    transform: translateX(-3px);
+    transition: .2s;
+}
+.owl-carousel .item {
+    position: relative;
+  }
+  
+  .owl-carousel .owl-item {
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+  }
+  
+  .owl-carousel .owl-item.active {
+    opacity: 1;
+    z-index: 2;
+  }
+  .plant-sec .col-4{
+    min-height: 700px;
+  }
+  .plant-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid hsl(39.47deg 90.48% 67.06%);
+    border-radius: 50%;
+    position: relative;
+    padding: 110px;
+    min-height: 110px;
+    background-color: #fff;
+  }
+  .plant-item img{
+    position: absolute;
+     bottom: 20%; 
+     left: 50%;
+     transform: translateX(-50%);
+  }
+  .plant-item-title{
+    width: 80%;
+    margin-top: 20px;
+  }
+  .plant-item-border{
+    border:1px dashed rgb(197, 197, 197);
+    padding: 10px ;
+    border-radius: 50%;
+  }

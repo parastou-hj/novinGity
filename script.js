@@ -1,170 +1,139 @@
 
-$(document).ready(function() {
-    // ========== Mega Menu Functionality ==========
-    
-    // Variables for mega menu navigation
-    const navItems = $(".nav-link.dropdown-toggle");
-    const megaMenus = $(".mega-menu");
-    // const menuOverlay = $(".menu-overlay");
-    
-    // Function to handle hover events for mega menus
-    function handleMegaMenuHover() {
-        let hoverTimeout;
-        
-        // On mouseenter, show the corresponding mega menu
-        navItems.on("mouseenter", function() {
-            const targetMenuId = $(this).data("megamenu");
-            
-            // Clear any existing timeout
-            clearTimeout(hoverTimeout);
-            
-            // Hide all mega menus first
-            megaMenus.removeClass("active");
-            
-            // Show the target menu and overlay
-            $("#" + targetMenuId).addClass("active");
-            // menuOverlay.addClass("active");
-        });
-        
-        // On mouseleave from nav item, set timeout to hide menu
-        navItems.on("mouseleave", function() {
-            hoverTimeout = setTimeout(function() {
-                megaMenus.removeClass("active");
-                // menuOverlay.removeClass("active");
-            }, 300); // Small delay to allow moving mouse to mega menu
-        });
-        
-        // On mouseenter mega menu, clear timeout
-        megaMenus.on("mouseenter", function() {
-            clearTimeout(hoverTimeout);
-        });
-        
-        // On mouseleave mega menu, hide it
-        megaMenus.on("mouseleave", function() {
-            $(this).removeClass("active");
-            // menuOverlay.removeClass("active");
-        });
-        
-        // Close mega menu when clicking outside
-        $(document).on("click", function(e) {
-            if (!$(e.target).closest(".nav-item, .mega-menu").length) {
-                megaMenus.removeClass("active");
-                // menuOverlay.removeClass("active");
-            }
-        });
-    }
-    
-    // ========== Tab System Functionality ==========
-    
-    // Function to initialize tab system
-    function initTabSystem() {
-        // For product menu tabs
-        const pTabs = $(".p-tab-earth");
-        
-        // Activate first tab by default
-        pTabs.first().addClass("active");
-        $("#" + pTabs.first().data("tab")).addClass("active");
-        
-        // Handle tab click
-        pTabs.on("click", function() {
-            const tabId = $(this).data("tab");
-            
-            // Remove active class from all tabs and contents
-            $(".p-tab-earth, .p-content-earth").removeClass("active");
-            
-            // Add active class to current tab and content
-            $(this).addClass("active");
-            $("#" + tabId).addClass("active");
-        });
-        
-        // Handle tab hover (alternative to click if preferred)
-        pTabs.on("mouseenter", function() {
-            const tabId = $(this).data("tab");
-            
-            // Remove active class from all tabs and contents
-            $(".p-tab-earth, .p-content-earth").removeClass("active");
-            
-            // Add active class to current tab and content
-            $(this).addClass("active");
-            $("#" + tabId).addClass("active");
-        });
-    }
-    
-    // ========== Mobile Menu Functionality ==========
-    
-    // Function to initialize mobile menu
-    function initMobileMenu() {
-        const mobileMenuBtn = $(".mobile-menu-btn");
-        const navMenu = $(".nav-menu");
-        
-        mobileMenuBtn.on("click", function() {
-            $(this).toggleClass("active");
-            navMenu.toggleClass("active");
-            menuOverlay.toggleClass("active");
-        });
-        
-        // Close mobile menu when clicking overlay
-        menuOverlay.on("click", function() {
-            mobileMenuBtn.removeClass("active");
-            navMenu.removeClass("active");
-            menuOverlay.removeClass("active");
-        });
-    }
-    
-    // ========== General Utility Functions ==========
-    
-    // Function to handle window resize events
-    function handleResize() {
-        $(window).on("resize", function() {
-            if ($(window).width() > 991) {
-                $(".mobile-menu-btn").removeClass("active");
-                $(".nav-menu").removeClass("active");
-                menuOverlay.removeClass("active");
-            }
-        });
-    }
-    
-    // Initialize all functionalities
-    handleMegaMenuHover();
-    initTabSystem();
-    initMobileMenu();
-    handleResize();
-    
-    // ========== Additional Tab System (From Your Example) ==========
-    
-    // Initialize tab system based on your example code
-    function initNavTabs() {
-        var tabs = $(".nav-item");
-        var firstTab = tabs.first();
-        
-        // Activate first tab by default (if it has data-tab attribute)
-        if (firstTab.data("tab")) {
-            firstTab.addClass("active");
-            $("#" + firstTab.data("tab")).addClass("active");
-        }
-        
-        // Handle tab hover
-        $(tabs).on("mouseenter", function() {
-            if ($(this).data("tab")) {
-                $(".nav-item.active, .nav-content.active").removeClass("active");
-                $(this).addClass("active");
-                $("#" + $(this).data("tab")).addClass("active");
-            }
-        });
-        
-        // Handle click outside to close
-        $('body').on('mouseover', function(e) {
-            if (!$(e.target).closest('.nav-item').length) {
-                $('.nav-item').removeClass('active');
-                $('.nav-content').removeClass('active');
-            }
-        });
-    }
-    
-    // Initialize the additional tab system
-    initNavTabs();
-});
+document.addEventListener('DOMContentLoaded', () => {
+    const megaMenuTriggers = document.querySelectorAll('.has-megamenu');
+    const allMegaMenus = document.querySelectorAll('.mega-menu');
+    let hoverTimeout = null;
+    let activeMenu = null;
+    let activeTriggerLi = null;
 
+    const closeAllMegaMenus = (immediately = false) => {
+        allMegaMenus.forEach(menu => {
+            if (menu.classList.contains('active')) {
+                menu.classList.remove('active');
+            }
+        });
+         if (activeTriggerLi) {
+             activeTriggerLi.classList.remove('active-trigger');
+         }
+        activeMenu = null;
+        activeTriggerLi = null;
+        if (hoverTimeout && !immediately) {
+             clearTimeout(hoverTimeout);
+             hoverTimeout = null;
+        }
+    };
+
+    const activateFirstTab = (menu) => {
+        if (!menu) return;
+        const tabs = menu.querySelectorAll('.pro-tabs > .p-tab');
+        const contents = menu.querySelectorAll('.pro-contents > .p-content');
+
+        tabs.forEach(tab => tab.classList.remove('active'));
+        contents.forEach(content => content.classList.remove('active'));
+
+        if (tabs.length > 0) {
+            const firstTab = tabs[0];
+            const firstContentId = firstTab.getAttribute('data-tab');
+            const firstContent = menu.querySelector(`.pro-contents > #${firstContentId}`);
+
+            firstTab.classList.add('active');
+            if (firstContent) {
+                firstContent.classList.add('active');
+            }
+        }
+    };
+
+    megaMenuTriggers.forEach(triggerLi => {
+        const targetMenuId = triggerLi.getAttribute('data-megamenu-target');
+        const targetSelector = targetMenuId.startsWith('#') ? targetMenuId : `#${targetMenuId}`;
+        // Important: Search for the menu within the nav context if placed inside
+        const targetMenu = triggerLi.closest('nav').querySelector(targetSelector);
+         // If menus are outside nav, use: document.querySelector(targetSelector);
+
+        if (!targetMenu) {
+             console.warn('Mega menu not found for target:', targetSelector);
+            return;
+        }
+
+        triggerLi.addEventListener('mouseenter', function() {
+            if (hoverTimeout) {
+                clearTimeout(hoverTimeout);
+                hoverTimeout = null;
+            }
+
+            if (activeMenu && activeMenu !== targetMenu) {
+                closeAllMegaMenus(true);
+            }
+
+            if (!targetMenu.classList.contains('active')) {
+                closeAllMegaMenus(true); // Ensure others are closed
+
+                activeMenu = targetMenu;
+                activeTriggerLi = this; // Keep track of the trigger
+                activateFirstTab(activeMenu);
+                activeMenu.classList.add('active');
+                activeTriggerLi.classList.add('active-trigger'); // Add style to trigger
+            }
+        });
+
+        triggerLi.addEventListener('mouseleave', function() {
+            hoverTimeout = setTimeout(() => {
+                if (activeMenu && !activeMenu.matches(':hover')) {
+                    closeAllMegaMenus(true);
+                }
+                hoverTimeout = null;
+            }, 250);
+        });
+    });
+
+    allMegaMenus.forEach(menu => {
+        menu.addEventListener('mouseenter', () => {
+            if (hoverTimeout) {
+                clearTimeout(hoverTimeout);
+                hoverTimeout = null;
+            }
+        });
+
+        menu.addEventListener('mouseleave', () => {
+            hoverTimeout = setTimeout(() => {
+                // Use activeTriggerLi to check if mouse moved back to trigger
+                if (activeTriggerLi && !activeTriggerLi.matches(':hover')) {
+                    closeAllMegaMenus(true);
+                }
+                hoverTimeout = null;
+            }, 250);
+        });
+
+        // Tab switching logic inside each menu
+        const megaMenuTabs = menu.querySelectorAll('.pro-tabs > .p-tab');
+        megaMenuTabs.forEach(tab => {
+            tab.addEventListener('mouseenter', function() {
+                if (!menu.classList.contains('active')) return;
+
+                const tabTargetId = this.getAttribute('data-tab');
+                const tabTargetContent = menu.querySelector(`.pro-contents > #${tabTargetId}`);
+
+                if (tabTargetContent && !this.classList.contains('active')) {
+                    const currentMenuTabs = menu.querySelectorAll('.pro-tabs > .p-tab');
+                    const currentMenuContents = menu.querySelectorAll('.pro-contents > .p-content');
+
+                    currentMenuTabs.forEach(t => t.classList.remove('active'));
+                    currentMenuContents.forEach(content => content.classList.remove('active'));
+
+                    tabTargetContent.classList.add('active');
+                    this.classList.add('active');
+                }
+            });
+        });
+    });
+
+    // Close menu on click outside
+    document.addEventListener('click', function(event) {
+        if (activeMenu && !activeMenu.contains(event.target) && activeTriggerLi && !activeTriggerLi.contains(event.target)) {
+            closeAllMegaMenus(true);
+        }
+    });
+});
 
  // تابع راه‌اندازی نقشه گوگل
  function initMap() {
@@ -262,3 +231,37 @@ $(document).ready(function() {
         mapTypeBtns[0].classList.remove('active');
     });
 }
+
+
+//baner-carousel
+$(function () {
+    $("#banner-owl").owlCarousel({
+      rtl: true,
+      items: 1,
+      // nav: true,
+      dots: false,
+      loop: true,
+      animateOut: 'fadeOut',
+    animateIn: 'fadeIn',
+    smartSpeed: 450,
+      autoplay: true,
+      autoplayTimeout: 4000,
+      autoplayHoverPause: true,
+      // navText: [
+      //     '<i class="fa-solid fa-chevron-right"></i>',
+      //     '<i class="fa-solid fa-chevron-left"></i>'
+      // ],
+      responsive: {
+        0: {
+          items: 1,
+        },
+      },
+    });
+  });
+  $(".nav-right").click(function () {
+    $("#banner-owl").trigger("prev.owl.carousel");
+  });
+  
+  $(".nav-left").click(function () {
+    $("#banner-owl").trigger("next.owl.carousel");
+  });
