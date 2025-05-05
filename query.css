@@ -1,0 +1,297 @@
+
+:root {
+    --primary-color: #4a7c59; 
+    --secondary-color: #8cc084;
+    --accent-color: #3d5a80;  
+    --neutral-color: #f4f7f2; 
+    --text-color: #000;
+    --light-accent: #c8e0d4; 
+    --hover-color: #6a9979; 
+    --red:hsl(359.43deg 79.1% 73.73%);
+    --blue:hsl(220deg 22.31% 47.45%)
+}
+@media screen and (max-width:1600px) {
+    .company-title {
+        font-size: 70px;
+    }
+        .lab-circle{
+            position: absolute;
+            top: 30%;
+            left: 0;
+            z-index: 1;
+           
+        }
+      
+}
+
+
+@media screen and (max-width:1200px) {
+    .company-title {
+        font-size: 60px;}
+    .main-nav{
+        padding: 0px;
+    }
+    .main-nav ul li {
+        margin-left: 0px;
+        text-wrap: wrap;
+    }
+      .blog-right{
+            right:-10px;
+        }
+        .blog-left{
+            left:-10px;
+        }
+    
+.products-title {
+    font-size: 25px;
+}
+.products-title span {
+  
+    font-size: 30px;
+    margin-top: 5px;
+}
+.products-subtitle {
+
+    text-align: right;
+}
+.feature-item {
+    width: 48%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.about-section .feature-icon {
+    margin-left: 0px;
+    margin-bottom: 20px;
+}
+.plant-item-wrapper {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 20px 0px;
+  }
+  .plant-item-border-spin {
+    width: 200px;
+    height: 200px;
+    
+  }
+  .plant-item{  
+    padding: 80px;
+    min-height: 80px;
+  }
+  .plant-item img {
+    height: 300px;
+    width: 200px;
+}
+.plant-sec .col-sm-4{
+    min-height: 600px;
+  }
+  .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+.logo-header .logo{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+}
+.home-icon {
+    background-color: var(--accent-color);
+    width: 80px;
+    height: 80px;
+
+}
+
+}
+
+@media screen and (max-width:992px) {
+   .banner .item .banner-text {
+    font-size: 2em;
+   }
+    .logo img {
+        width: auto;
+        height: 100px;
+        object-fit: fill;
+    }
+    .logo-header .logo{
+        display: flex;
+        justify-content: end;
+    }
+    .fa-bars{
+        font-size: 40px;
+    }
+    .nav-btns {
+        left: 10px;
+        
+    }
+    .lab-circle{
+        position: absolute;
+        top: 30%;
+        left: 5%;
+        z-index: 1;
+        width: 90px;
+    }
+    .company-title {
+        font-size: 40px;
+    }
+    .features-section .feature-icon {
+        position: relative;
+        margin: 0 auto 20px;
+        width: 110px;
+        height: 110px;
+    }
+    .products-title-section {
+        height: 400px;
+        background-color: var(--blue);
+        padding: 0px 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .products-title-section-txt{
+        margin-top: 20px;
+        height: max-content;
+        text-align: center;
+    }
+    .map-sec img{
+        min-height:200px
+    }
+    .off-canvas-header{
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        font-family: IRANYekanWebMedium;
+        color: white;
+        background-color: var(--primary-color) !important;
+      }
+      .off-canvas-nav{
+        padding-top:10px ;
+      }
+      .off-canvas-item{
+        padding: 15px 20px;
+        border-bottom: 1px solid var(--light-accent);
+      
+      }
+      .off-canvas-navs{
+        background-color: #f5f5f5;
+      
+      }
+      .off-canvas-item i{
+        float: left;
+      }
+    
+}
+@media screen and (max-width: 768px) {
+    .banner .item .banner-text {
+        font-size: 1.8em;
+       }
+    .banner .item{
+        position: relative;
+        height: 450px;
+    }
+    .logo img {
+        width: 250px;
+        height: 100px;
+        object-fit: fill;
+    }
+    .company-title {
+        font-size: 35px;
+    }
+    .product-image {
+       width: 50%;
+       height: 50%;
+    }
+    .plant-item-wrapper {
+        position: relative;
+        width: 140px;
+        height: 140px;
+        margin: 20px 0px;
+      }
+      .plant-item-border-spin {
+        width: 140px;
+        height: 140px;
+        
+      }
+      .plant-item{  
+        padding: 60px;
+        min-height: 60px;
+      }
+      .plant-item img {
+        height: 220px;
+        width: 110px;
+    }
+    .plant-sec .col-sm-4{
+        min-height: 500px;
+        padding: 0px;
+      }
+    
+}
+@media screen and (max-width: 576px) {
+    .banner .item .banner-text {
+        font-size: 1.5em;
+       }
+    .company-title {
+        font-size: 25px;
+    }
+    .footer-list-container{
+        flex-direction: column;
+    }
+    .footer-list-container .footer-list{
+        width: 100%;
+        margin-top: 20px;
+      }
+    .footer-list >div:first-child{
+        margin-bottom: 5px;
+        border-bottom: 1px solid var(--primary-color);
+        display: flex;
+      }
+      .footer-list i{
+      display: block;
+      margin-right: auto;
+      color: var(--primary-color);
+      cursor: pointer;
+      }
+      .footer-tab{
+        padding-bottom: 5px;
+      }
+      .footer-list-content {
+        margin-top: 10px;
+        display: none;
+      }
+      .plant-item img {
+        height: 180px;
+        width: 100px;
+    }
+    .plant-sec .col-sm-4{
+        min-height: 225px;
+        padding: 0px;
+      }
+      .plant-sec .col-sm-4{
+        flex-direction: row;
+      }
+      .plant-item-border-spin {
+       display: none;
+        
+      }
+      .plant-item{  
+        padding: 50px;
+        min-height: 50px;
+      }
+      .footer-list-content {
+        
+        padding-right: 20px !important;
+      
+    }
+    .footer-log-img{
+        justify-self: center;
+    }
+    .footer-container {
+       flex-direction: column-reverse;
+
+        justify-content: space-between;
+    }
+      
+}

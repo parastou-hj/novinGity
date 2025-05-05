@@ -285,7 +285,11 @@ $(function () {
       // ],
       responsive: {
         0: {
-          items: 1,
+          items: 2,
+        }
+        ,
+        768:{
+            items:3
         },
         992:{
             items:4
@@ -312,7 +316,7 @@ $(function () {
       loop: true,
     smartSpeed: 450,
       autoplay: true,
-      autoplayTimeout: 4000,
+      autoplayTimeout: 3000,
       autoplayHoverPause: true,
       // navText: [
       //     '<i class="fa-solid fa-chevron-right"></i>',
@@ -320,7 +324,13 @@ $(function () {
       // ],
       responsive: {
         0: {
-          items: 1,
+          items: 3,
+        },
+        576:{
+            items:4
+        },
+        768:{
+            items:6
         },
         992:{
             items:8
@@ -353,3 +363,111 @@ $(document).ready(function () {
     });
   });
   
+
+  //off-canvas:
+
+$('.fa-bars').on('click', function(){
+    $('.off-canvas').addClass('active');
+    $('.overlay').addClass('active');
+    $('body').css('overflow','hidden');
+    
+  })
+  $('.close-btn').on('click',function(){
+    $('.off-canvas').removeClass('active');
+    $('.overlay').removeClass('active');
+    $('body').css('overflow','auto');
+  
+  })
+  $(document).ready(function() {
+  
+    $('.category-btn').on('click', function(e) {
+        e.preventDefault();
+        $('.submenu.level-1').addClass('active');
+    });
+  
+  
+    $('.subcategory-btn').on('click', function(e) {
+        e.preventDefault();
+        $(this).closest('.submenu-item').find('.submenu.level-2').addClass('active');
+    });
+  
+  
+    $('.back-btn').on('click', function() {
+        $(this).closest('.submenu').removeClass('active');
+    });
+  
+  
+    $('.close-btn').on('click', function() {
+        $('.submenu').removeClass('active');
+    });
+  });
+  $('body').on('click',function(e){
+    if(!e.target.closest('.off-canvas')&&!e.target.closest('.fa-bars')&&!e.target.closest('.fixed-phone')&&!e.target.closest('.pro-equip')&& !e.target.closest('.equip')){
+        $('.off-canvas').removeClass('active');
+        $('.overlay').removeClass('active');
+        $('body').css('overflow','auto');
+      
+  
+    }})
+
+
+    $(document).ready(function () {
+        const $searchIcon = $('.search-icon');
+        const $searchBox = $('.search-box');
+        const $searchInput = $('.search-box input');
+        const $closeSearch = $('.close-search');
+        const $searchResults = $('.search-results');
+
+        $searchIcon.on('click', function () {
+            $searchBox.toggle();
+            if ($searchBox.is(':visible')) {
+                $searchInput.focus();
+                $searchResults.hide(); 
+                $searchInput.val(''); 
+            }
+        });
+
+        $closeSearch.on('click', function () {
+            $searchBox.hide();
+            $searchResults.hide();
+            $searchInput.val('');
+        });
+
+        $searchInput.on('input', function (e) {
+             
+            var searchText = e.target.value.trim().toLowerCase();
+            $.each($('.search-result-item'), function (i, item) {
+                if ($(item).text().toLowerCase().includes(searchText) && searchText.length > 0) {
+                    $searchResults.show();
+                    $(item).css('display', 'block');
+                } else {
+                    $(item).css('display', 'none');
+                }
+            });
+            if ($('.search-result-item:visible').length > 0 && searchText.length > 0) {
+                $searchResults.show();
+            } else {
+                $searchResults.hide();
+            }
+        });
+
+       
+
+        $(document).on('click', function (event) {
+            if (!$(event.target).closest('.search-box, .search-icon').length && $searchBox.is(':visible')) {
+                $searchBox.hide();
+                $searchResults.hide();
+                $searchInput.val('');
+            }
+        });
+
+        $searchBox.on('click', function (event) {
+            event.stopPropagation();
+        });
+    });
+
+    var tabs=$('.footer-tab');
+    tabs.on('click', function(){
+        // $(this).addClass('active');
+        $('#'+$(this).data('tab')).toggleClass('active')
+    })

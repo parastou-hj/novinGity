@@ -6,9 +6,8 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/owl.carousel.min.css">
     <link rel="stylesheet" href="./css/owl.theme.default.min.css">
-    <!-- فونت آوسام برای آیکون‌ها -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/f595c78486.js" crossorigin="anonymous"></script>    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="query.css">
     <title>Novin Giti Gene Biotechnology</title>
    
 </head>
@@ -19,13 +18,18 @@
           <div class="header-top">
             <img src="./images/top-header.png" alt="">
           </div>
-            <div class="row col-xl-11 mx-auto ">
-                <div class="col-lg-1 d-flex home-icon">
+            <div class="row col-xl-11 ">
+                <div class="col-xl-1 col-lg-1 d-none d-lg-flex home-icon">
                     <div class="">
                         <a href="#"><img src="./images/home.png" alt=""></a>
                     </div>
                 </div>
-                <div class="col-lg-9 home-nav d-flex align-items-center py-4">
+                <div class="col-6 d-flex d-lg-none bars justify-content-start align-items-center">
+                    <div class="">
+                        <i class="fa-solid fa-bars fa-xxl"></i>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-8 home-nav d-none d-lg-flex align-items-center py-4">
                     
                     <!-- Navigation menu -->
                     <nav class="main-nav">
@@ -43,11 +47,17 @@
                               <img src="./images/flesh-down.png" alt="">
                             </a>
                           </li>
-                          <li >
+                          <li class="has-submenu" >
                             <a href="#">
-                              <span>بخش های مختلف شرکت</span>
+                              <span class="">بخش های مختلف شرکت</span>
                               <img src="./images/flesh-down.png" alt="">
                             </a>
+                            <div class="sm-sub-menu p-2">
+                                <div class="about-sub-menu-item p-2 mb-2">زیر منو تستی</div>
+                                <div class="about-sub-menu-item p-2 mb-2">زیر منو تستی</div>
+                                <div class="about-sub-menu-item p-2 mb-2">زیر منو تستی</div>
+                                <div class="about-sub-menu-item p-2 mb-2">زیر منو تستی</div>
+                              </div>
                           </li>
                           <li >
                             <a href="#">
@@ -78,98 +88,135 @@
                       <div id="products-mega-menu" class="mega-menu">
                         <div class="pro-menu px-0">
                             <div class="pro-tabs">
-                                <div class="p-tab" data-tab="vehicle">
-                                    <div><i class="fa-solid fa-car fa-fw"></i><span>بیمه وسایل نقلیه</span></div>
+                                <div class="p-tab" data-tab="tissue-cultured">
+                                    <div><i class="fa-solid fa-leaf fa-fw"></i><span>گیاهان کشت بافت</span></div>
                                     <i class="fa-solid fa-chevron-left"></i>
                                 </div>
-                                <div class="p-tab" data-tab="personal">
-                                    <div><i class="fa-solid fa-user-shield fa-fw"></i><span>بیمه اشخاص</span></div>
+                                <div class="p-tab" data-tab="medicinal-extracts">
+                                    <div><i class="fa-solid fa-flask fa-fw"></i><span>عصاره‌های گیاهی دارویی</span></div>
                                     <i class="fa-solid fa-chevron-left"></i>
                                 </div>
-                                <div class="p-tab" data-tab="property">
-                                    <div><i class="fa-solid fa-house-damage fa-fw"></i><span>بیمه اموال</span></div>
+                                <div class="p-tab" data-tab="metabolites">
+                                    <div><i class="fa-solid fa-vial fa-fw"></i><span>متابولیت‌های ثانویه</span></div>
                                     <i class="fa-solid fa-chevron-left"></i>
                                 </div>
-                                <div class="p-tab" data-tab="liability">
-                                    <div><i class="fa-solid fa-gavel fa-fw"></i><span>بیمه مسئولیت</span></div>
+                                <div class="p-tab" data-tab="gm-plants">
+                                    <div><i class="fa-solid fa-dna fa-fw"></i><span>گیاهان تراریخته</span></div>
                                     <i class="fa-solid fa-chevron-left"></i>
                                 </div>
-                                <div class="p-tab" data-tab="pet">
-                                    <div><i class="fa-solid fa-dog fa-fw"></i><span>بیمه حیوانات خانگی</span></div>
+                                <div class="p-tab" data-tab="biotech-kits">
+                                    <div><i class="fa-solid fa-box-open fa-fw"></i><span>کیت‌های بیوتکنولوژی</span></div>
                                     <i class="fa-solid fa-chevron-left"></i>
                                 </div>
                             </div>
-            
+                    
                             <div class="pro-contents">
-                                <div class="p-content" id="vehicle">
-                                    <a href="#"><i class="fa-solid fa-chevron-left"></i><span>همه بیمه های وسایل نقلیه</span></a>
-                                    <div class="sub-menus row"> <!-- Using Bootstrap row -->
-                                        <div class="sub-menu col-md-6 mb-3"> <!-- Using Bootstrap col -->
-                                            <a href="#">بیمه شخص ثالث</a>
+                                <div class="p-content" id="tissue-cultured">
+                                    <a href="#"><i class="fa-solid fa-chevron-left"></i><span>همه گیاهان کشت بافت</span></a>
+                                    <div class="sub-menus row">
+                                        <div class="sub-menu col-md-6 mb-3">
+                                            <a href="#">گیاهان دارویی</a>
                                             <div class="sub-menu-items">
-                                                <div class="s-b-item"><a href="#">خرید / استعلام ثالث خودرو</a></div>
-                                                <div class="s-b-item"><a href="#">خرید / استعلام ثالث موتور</a></div>
+                                                <div class="s-b-item"><a href="#">نپتا پوگونوسپرما (*Nepeta pogonosperma*)</a></div>
+                                                <div class="s-b-item"><a href="#">آرتمزیا آوچری (*Artemisia aucheri*)</a></div>
+                                                <div class="s-b-item"><a href="#">دراکوسفالوم کوتسچی (*Dracocephalum kotschyi*)</a></div>
                                             </div>
                                         </div>
                                         <div class="sub-menu col-md-6 mb-3">
-                                            <a href="#">بیمه بدنه</a>
+                                            <a href="#">گیاهان زینتی</a>
                                             <div class="sub-menu-items">
-                                                <div class="s-b-item"><a href="#">خرید / استعلام بدنه خودرو</a></div>
-                                                <div class="s-b-item"><a href="#">پوشش‌های اضافی بدنه</a></div>
+                                                <div class="s-b-item"><a href="#">رزهای کشت بافتی</a></div>
+                                                <div class="s-b-item"><a href="#">ارکیده‌های کشت بافتی</a></div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="p-content" id="personal">
-                                     <a href="#"><i class="fa-solid fa-chevron-left"></i><span>همه بیمه های اشخاص</span></a>
+                                <div class="p-content" id="medicinal-extracts">
+                                    <a href="#"><i class="fa-solid fa-chevron-left"></i><span>همه عصاره‌های گیاهی دارویی</span></a>
                                     <div class="sub-menus row">
                                         <div class="sub-menu col-md-6 col-lg-4 mb-3">
-                                            <a href="#">بیمه عمر</a>
+                                            <a href="#">عصاره‌های ریشه مویی</a>
                                             <div class="sub-menu-items">
-                                                <div class="s-b-item"><a href="#">بیمه عمر و سرمایه گذاری</a></div>
-                                                <div class="s-b-item"><a href="#">بیمه بازنشستگی</a></div>
-                                                <div class="s-b-item"><a href="#">استعلام بیمه عمر</a></div>
+                                                <div class="s-b-item"><a href="#">عصاره نپتا پوگونوسپرما</a></div>
+                                                <div class="s-b-item"><a href="#">عصاره آرتمزیا آوچری</a></div>
                                             </div>
                                         </div>
                                         <div class="sub-menu col-md-6 col-lg-4 mb-3">
-                                            <a href="#">بیمه درمان تکمیلی</a>
+                                            <a href="#">عصاره‌های کل گیاه</a>
                                             <div class="sub-menu-items">
-                                                <div class="s-b-item"><a href="#">بیمه درمان انفرادی</a></div>
-                                                <div class="s-b-item"><a href="#">بیمه درمان خانواده</a></div>
-                                                <div class="s-b-item"><a href="#">بیمه درمان گروهی</a></div>
+                                                <div class="s-b-item"><a href="#">عصاره دراکوسفالوم کوتسچی</a></div>
+                                                <div class="s-b-item"><a href="#">عصاره سایر گیاهان دارویی</a></div>
                                             </div>
                                         </div>
                                         <div class="sub-menu col-md-6 col-lg-4 mb-3">
-                                            <a href="#">بیمه حوادث</a>
+                                            <a href="#">روغن‌های گیاهی</a>
                                             <div class="sub-menu-items">
-                                                <div class="s-b-item"><a href="#">بیمه حوادث انفرادی</a></div>
-                                                <div class="s-b-item"><a href="#">بیمه حوادث گروهی</a></div>
-                                            </div>
-                                        </div>
-                                        <div class="sub-menu col-md-6 col-lg-4 mb-3">
-                                            <a href="#">بیمه مسافرتی</a>
-                                            <div class="sub-menu-items">
-                                                <div class="s-b-item"><a href="#">بیمه مسافرتی خارج از کشور</a></div>
-                                                <div class="s-b-item"><a href="#">بیمه زائرین (عتبات/حج)</a></div>
+                                                <div class="s-b-item"><a href="#">روغن اسانسی نپتا</a></div>
+                                                <div class="s-b-item"><a href="#">روغن اسانسی آرتمزیا</a></div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="p-content" id="property">
-                                    <a href="#"><i class="fa-solid fa-chevron-left"></i><span>همه بیمه های اموال</span></a>
-                                     <p>محتوای بیمه اموال در اینجا...</p>
+                                <div class="p-content" id="metabolites">
+                                    <a href="#"><i class="fa-solid fa-chevron-left"></i><span>همه متابولیت‌های ثانویه</span></a>
+                                    <div class="sub-menus row">
+                                        <div class="sub-menu col-md-6 mb-3">
+                                            <a href="#">فلاونوئیدها</a>
+                                            <div class="sub-menu-items">
+                                                <div class="s-b-item"><a href="#">فلاونوئیدهای استخراج‌شده از نپتا</a></div>
+                                                <div class="s-b-item"><a href="#">فلاونوئیدهای آرتمزیا</a></div>
+                                            </div>
+                                        </div>
+                                        <div class="sub-menu col-md-6 mb-3">
+                                            <a href="#">ترپنوئیدها</a>
+                                            <div class="sub-menu-items">
+                                                <div class="s-b-item"><a href="#">ترپنوئیدهای دراکوسفالوم</a></div>
+                                                <div class="s-b-item"><a href="#">ترپنوئیدهای ریشه مویی</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="p-content" id="liability">
-                                    <a href="#"><i class="fa-solid fa-chevron-left"></i><span>همه بیمه های مسئولیت</span></a>
-                                     <p>محتوای بیمه مسئولیت در اینجا...</p>
+                                <div class="p-content" id="gm-plants">
+                                    <a href="#"><i class="fa-solid fa-chevron-left"></i><span>همه گیاهان تراریخته</span></a>
+                                    <div class="sub-menus row">
+                                        <div class="sub-menu col-md-6 mb-3">
+                                            <a href="#">گیاهان دارویی تراریخته</a>
+                                            <div class="sub-menu-items">
+                                                <div class="s-b-item"><a href="#">نپتا تراریخته با متابولیت بالا</a></div>
+                                                <div class="s-b-item"><a href="#">آرتمزیا تراریخته مقاوم</a></div>
+                                            </div>
+                                        </div>
+                                        <div class="sub-menu col-md-6 mb-3">
+                                            <a href="#">گیاهان زراعی تراریخته</a>
+                                            <div class="sub-menu-items">
+                                                <div class="s-b-item"><a href="#">محصولات زراعی با ژن GUS</a></div>
+                                                <div class="s-b-item"><a href="#">گیاهان مقاوم به تنش</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="p-content" id="pet">
-                                    <a href="#"><i class="fa-solid fa-chevron-left"></i><span>همه بیمه های حیوانات خانگی</span></a>
-                                     <p>محتوای بیمه حیوانات خانگی در اینجا...</p>
+                                <div class="p-content" id="biotech-kits">
+                                    <a href="#"><i class="fa-solid fa-chevron-left"></i><span>همه کیت‌های بیوتکنولوژی</span></a>
+                                    <div class="sub-menus row">
+                                        <div class="sub-menu col-md-6 mb-3">
+                                            <a href="#">کیت‌های کشت بافت</a>
+                                            <div class="sub-menu-items">
+                                                <div class="s-b-item"><a href="#">کیت کشت بافت گیاهان دارویی</a></div>
+                                                <div class="s-b-item"><a href="#">کیت کشت بافت گیاهان زینتی</a></div>
+                                            </div>
+                                        </div>
+                                        <div class="sub-menu col-md-6 mb-3">
+                                            <a href="#">کیت‌های مولکولی</a>
+                                            <div class="sub-menu-items">
+                                                <div class="s-b-item"><a href="#">کیت استخراج DNA گیاهی</a></div>
+                                                <div class="s-b-item"><a href="#">کیت PCR برای گیاهان</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                      </div>
+                    </div>
                     </nav>
                    
                     <!-- Search icon -->
@@ -178,19 +225,136 @@
                     </div>
                     
                 </div>
-                <div class="col-lg-2">
+                <div class="col-xl-2 col-lg-3 col-6 logo-header">
                     <div class="logo">
                         <img src="./images/brand-logo.png" alt="NGene Biotech Logo">
                     </div> 
                 </div>
             </div>
         </div>
-  
+        <div class="search-box" style="display: none;">
+            <div class="search-box-container d-flex align-items-center">
+                <input type="text" class="form-control" placeholder="جستجو..." aria-label="جستجو">
+                <button class="btn btn-primary ms-2" type="button"><i class="fas fa-search"></i></button>
+                <button class="btn btn-link close-search ms-2" type="button"><i class="fas fa-times"></i></button>
+                <div class="search-results">
+                    <div class="search-result-item" data-url="#"><i class="fas fa-leaf"></i> نپتا پوگونوسپرما (گیاهان کشت بافت)</div>
+                    <div class="search-result-item" data-url="#"><i class="fas fa-leaf"></i> آرتمزیا آوچری (گیاهان کشت بافت)</div>
+                    <div class="search-result-item" data-url="#"><i class="fas fa-leaf"></i> دراکوسفالوم کوتسچی (گیاهان کشت بافت)</div>
+                    <div class="search-result-item" data-url="#"><i class="fas fa-leaf"></i> رز کشت بافتی (گیاهان کشت بافت)</div>
+                    <div class="search-result-item" data-url="#"><i class="fas fa-leaf"></i> ارکیده کشت بافتی (گیاهان کشت بافت)</div>
+                </div>
+            </div>
+        </div>
+    </div>
         <!-- Overlay for mobile menu -->
         <div class="menu-overlay"></div>
     </header>
     
     <main>
+        <div class="off-canvas">
+            <div class="off-canvas-header d-flex justify-content-between">
+              <span>منوی دسترسی</span>
+              <div class="close-btn">
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+            </div>
+            <div class="off-canvas-nav">
+              <div class="off-canvas-item">
+                <a href="#">صفحه اصلی</a>
+              </div>
+              <div class="off-canvas-item has-submenu">
+                <a href="#" class="category-btn">
+                  <span> محصولات</span>
+                  <i class="fa-solid fa-chevron-left"></i>
+                </a>
+                <div class="submenu level-1">
+                  <div class="submenu-header">
+                    <button class="back-btn">
+                      <i class="fa-solid fa-chevron-right"></i>
+                      <span>بازگشت</span>
+                    </button>
+                  </div>
+                  <div class="submenu-items">
+                    <div class="submenu-item has-submenu">
+                      <a href="#" class="subcategory-btn">
+                        <span>دسته اول</span>
+                        <i class="fa-solid fa-chevron-left"></i>
+                      </a>
+                      <div class="submenu level-2">
+                        <div class="submenu-header">
+                          <button class="back-btn">
+                            <i class="fa-solid fa-chevron-right"></i>
+                            <span>بازگشت</span>
+                          </button>
+                          <span>دسته اول</span>
+                        </div>
+                        <div class="submenu-items">
+                          <div class="submenu-item">
+                            <a href="#">زیردسته 1-1</a>
+                          </div>
+                          <div class="submenu-item">
+                            <a href="#">زیردسته 1-2</a>
+                          </div>
+                          <div class="submenu-item">
+                            <a href="#">زیردسته 1-3</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="submenu-item has-submenu">
+                      <a href="#" class="subcategory-btn">
+                        <span>دسته دوم</span>
+                        <i class="fa-solid fa-chevron-left"></i>
+                      </a>
+                      <div class="submenu level-2">
+                        <div class="submenu-header">
+                          <button class="back-btn">
+                            <i class="fa-solid fa-chevron-right"></i>
+                            <span>بازگشت</span>
+                          </button>
+                          <span>دسته دوم</span>
+                        </div>
+                        <div class="submenu-items">
+                          <div class="submenu-item">
+                            <a href="#">زیردسته 2-1</a>
+                          </div>
+                          <div class="submenu-item">
+                            <a href="#">زیردسته 2-2</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="submenu-item">
+                      <a href="#" class="subcategory-btn">
+                        <span>دسته سوم</span>
+                      </a>
+                    </div>
+                    <div class="submenu-item">
+                      <a href="#" class="subcategory-btn">
+                        <span>دسته چهارم</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="off-canvas-item">
+                <span>درباره ما</span>
+                <i class="fa-solid fa-chevron-left"></i>
+              </div>
+              
+              <div class="off-canvas-item">
+                <span>همکاری با ما</span>
+                <i class="fa-solid fa-chevron-left"></i>
+              </div>
+              <div class="off-canvas-item">
+                <a href="#"> اخبار و رویدادها</a>
+              </div>
+              <div class="off-canvas-item">
+                <a href="#">تماس با ما</a>
+              </div>
+            </div>
+          </div>
         <!-- Banner section -->
     <section class="banner position-relative">
       <div class="nav-btns">
@@ -248,7 +412,7 @@
                             </div>
                             <div>
                               <h4 class="feature-title">لورم ایپسوم متن ساختگی</h4>
-                            <p class="feature-text">از صنعت چاپ و با است</p>
+                              <p class="feature-text">از صنعت چاپ و با است</p>
                             </div>
                         </div>
                         <div class="feature-item">
@@ -275,10 +439,11 @@
                 <div class="about-images">
                     <div class="lab-image">
                         <img src="./images/labra-img.png" alt="تجهیزات آزمایشگاهی" class="img-fluid rounded" />
+                        <div class="lab-circle"">
+                            <img src="./images/lab-circle.png" alt="رشد گیاه از کشت بافت" class="img-fluid" />
+                        </div>
                     </div>
-                    <div class="lab-circle"">
-                        <img src="./images/lab-circle.png" alt="رشد گیاه از کشت بافت" class="img-fluid" />
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -297,7 +462,7 @@
         <!-- بخش ویژگی‌ها -->
         <div class="row features-row">
             <!-- تجربه -->
-            <div class="col-md-3">
+            <div class="col-lg-3 col-md-6 col-6">
                 <div class="feature-box text-center">
                     <div class="feature-icon">
                         <img src="./images/experience.png" alt="تجربه" />
@@ -311,7 +476,7 @@
                 </div>
             </div>
             <!-- کیفیت -->
-            <div class="col-md-3">
+            <div class="col-lg-3 col-md-6 col-6">
                 <div class="feature-box text-center">
                     <div class="feature-icon">
                         <img src="./images/quality.png" alt="کیفیت" />
@@ -325,7 +490,7 @@
                 </div>
             </div>
             <!-- سرویس -->
-            <div class="col-md-3">
+            <div class="col-lg-3 col-md-6 col-6">
                 <div class="feature-box text-center">
                     <div class="feature-icon">
                         <img src="./images/lab-plant.png" alt="سرویس" />
@@ -339,7 +504,7 @@
                 </div>
             </div>
             <!-- قابلیت اطمینان -->
-            <div class="col-md-3">
+            <div class="col-lg-3 col-md-6 col-6">
                 <div class="feature-box text-center">
                     <div class="feature-icon">
                         <img src="./images/labratoar.png" alt="قابلیت اطمینان" />
@@ -369,7 +534,7 @@
                     <div class="product-image">
                         <img src="images/product-baner1.png" alt="توت فرنگی" class="img-fluid ">
                     </div>
-                    <div>
+                    <div class="products-title-section-txt">
                         <h2 class="products-title">محصولات <span>گیتی ژن</span></h2>
                     <p class="products-subtitle">
                         لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
@@ -423,7 +588,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col- p-1">
+            <div class="col-md-4 col-6 p-1">
                 <div class="product-item">
                     <img src="images/pro-baner5.png" alt="نمونه محصول" class="img-fluid">
                     <div class="product-overlay">
@@ -442,41 +607,45 @@
         </div>
     </div>
 </section>
-<section class="plant-sec my-5">
+<section class="plant-sec mt-5 mb-2">
     <div class="container-fluid px-0">
         <div class="row col-xl-11 align-items-center">
-            <div class="col-4 d-flex flex-column align-items-center justify-content-center">
-                <div class="plant-item-border">
+            <div class="col-sm-4 d-flex  align-items-center justify-content-center">
+                <div class="plant-item-wrapper">
+                    <div class="plant-item-border-spin"></div>
                     <div class="plant-item">
                         <img src="./images/plant1.png" alt="">
                     </div>
                 </div>
-                <div class="plant-item-title text-center">
+                <div class="plant-item-title text-sm-center text-right">
                     <p>نمونه تیتر توضیحی </p>
-                   <p>                         ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از لازم است و  
+                   <p>  ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از لازم است و  
                     </p>
                 </div>
 
             </div>
-            <div class="col-4 d-flex flex-column justify-content-center align-items-center">
-                <div class="plant-item-border">
+            <div class="col-sm-4 d-flex  justify-content-center align-items-center">
+                <div class="plant-item-wrapper">
+                    <div class="plant-item-border-spin"></div>
                     <div class="plant-item">
+                        
                         <img src="./images/plant2.png" alt="">
                     </div>
                 </div>
-                <div class="plant-item-title text-center">
+                <div class="plant-item-title text-sm-center text-right">
                     <p>نمونه تیتر توضیحی </p>
                    <p>   ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از لازم است و  
                     </p>
                 </div>
             </div>
-            <div class="col-4 d-flex flex-column justify-content-center align-items-center">
-               <div class="plant-item-border">
+            <div class="col-sm-4 d-flex  justify-content-center align-items-center">
+               <div class="plant-item-wrapper">
+                <div class="plant-item-border-spin"></div>
                 <div class="plant-item">
                     <img src="./images/plant3.png" alt="">
                 </div>
                </div>
-                <div class="plant-item-title text-center">
+                <div class="plant-item-title text-sm-center text-right">
                     <p>نمونه تیتر توضیحی </p>
                    <p>                         ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از لازم است و  
                     </p>
@@ -754,11 +923,12 @@
           </div>
           <div class="footer-rights-sec container-fluid py-3 px-0">
             <div class="row col-xl-11 main-row">
-                <div class="up mx-2">
-                    <img src="./images/up.png" alt="">
-                </div>
+                
               <div class="footer-container">
                 <div class="footer-rights">
+                    <div class="up">
+                        <img src="./images/up.png" alt="">
+                    </div>
                   <span>©Copyright 2019 All Rights Reserved</span >
                    
                 </div>
